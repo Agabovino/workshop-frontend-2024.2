@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
 import Header from '@/app/components/Header';
 import AgentCard from '@/app/components/AgentCard';
+import Carousel from './components/Carousel';
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -30,18 +30,20 @@ export default function Home() {
     <main>
       <Header onInputChange={setInput} />
 
-      <div className="flex flex-wrap gap-4 justify-center">
+      <div className='flex flex-wrap gap-4 justify-center'>
+        <Carousel items={filteredData.slice(0, 3)} />
+      </div>
 
+      <div className="flex flex-wrap gap-4 justify-center">
         {filteredData.map(agent => (
-          <Link href={`/agents/${agent.uuid}`} key={agent.uuid} className="flex flex-col items-center">
-            <AgentCard
-              name={agent.displayName}
-              classe={agent.role ? agent.role.displayName : 'N/A'}
-              description={agent.description}
-              profile={agent.displayIcon}
-              abilities={agent.abilities} 
-            />
-          </Link>
+          <AgentCard
+            key={agent.uuid}
+            name={agent.displayName}
+            classe={agent.role ? agent.role.displayName : 'N/A'}
+            description={agent.description}
+            profile={agent.displayIcon}
+            abilities={agent.abilities}
+          />
         ))}
       </div>
     </main>
