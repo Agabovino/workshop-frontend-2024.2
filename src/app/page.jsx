@@ -31,7 +31,7 @@ export default function Home() {
       <Header onInputChange={setInput} />
 
       <div className='flex flex-wrap gap-4 justify-center'>
-        <Carousel items={filteredData.slice(0, 3)} />
+        <Carousel items={filteredData} />
       </div>
 
       <div className="flex flex-wrap gap-4 justify-center">

@@ -5,7 +5,7 @@ const Header = ({ onInputChange }) => {
         <div className={styles.Header}>
 
             <div className={styles.logo}>
-                <h1 className={styles.titulo}>WEB-ÁGABO</h1>
+                <h1 className={styles.titulo}>WEB-ÁGABO-APP</h1>
             </div>
 
             <div className={styles.search}>
