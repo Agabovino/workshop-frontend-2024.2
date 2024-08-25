@@ -1,7 +1,10 @@
 .Header{
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 12px;
 
     padding: 12px;
     margin-bottom: 24px;
@@ -10,12 +13,27 @@
 
 }
 
+.search{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .input{
 
     border-radius: 6px;
     padding: 6px;
 }
 
-.img{
+.titulo{
+    font-weight: bold;
+    color: white;
 
+    font-size: 1.2rem;
 }
+
+.subtitulo{
+    color: white;
+}
+
+

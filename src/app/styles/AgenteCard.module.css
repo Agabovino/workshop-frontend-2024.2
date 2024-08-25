@@ -1,17 +1,21 @@
 .card {
     display: flex;
     flex-direction: column;
+
     border: 1px solid #ddd;
     border-radius: 12px;
-    background-color: #fff;
+    background-color: #92a0ed6c;
     overflow: hidden;
     width: 100%;
-    max-width: 300px;
+    max-width: 30%;
+    max-height: 24rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    overflow-y:scroll ;
   }
   
   .profile {
-    width: 100%;
+    width: 50%;
     height: auto;
   }
   
@@ -20,6 +24,7 @@
   }
   
   .name {
+    font-weight: bold;
     font-size: 1.5em;
     margin-bottom: 8px;
   }

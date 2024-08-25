@@ -1,7 +1,7 @@
 'use client'
 
-// page.jsx
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import Header from '@/app/components/Header';
 import AgentCard from '@/app/components/AgentCard';
 
@@ -22,25 +22,26 @@ export default function Home() {
       });
   }, []);
 
-  // Funcaoo para fitlrar dados com base no input
-
   const filteredData = data.filter(agent =>
     agent.displayName.toLowerCase().includes(input.toLowerCase())
   );
 
   return (
     <main>
-      <Header onInputChange={getInput} />
+      <Header onInputChange={setInput} />
+
       <div className="flex flex-wrap gap-4 justify-center">
+
         {filteredData.map(agent => (
-          <AgentCard
-            key={agent.uuid}
-            name={agent.displayName}
-            classe={agent.role ? agent.role.displayName : 'N/A'} // Verifica se role existe
-            description={agent.description}
-            profile={agent.displayIcon}
-            abilities={agent.abilities} // Passar as habilidades
-          />
+          <Link href={`/agents/${agent.uuid}`} key={agent.uuid} className="flex flex-col items-center">
+            <AgentCard
+              name={agent.displayName}
+              classe={agent.role ? agent.role.displayName : 'N/A'}
+              description={agent.description}
+              profile={agent.displayIcon}
+              abilities={agent.abilities} 
+            />
+          </Link>
         ))}
       </div>
     </main>
