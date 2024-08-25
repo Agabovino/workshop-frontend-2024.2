@@ -5,8 +5,8 @@ const AgentCard = ({ name, description, profile }) => {
         <div className={styles.card}>
             <img src={profile} alt={name} className={styles.profile} />
             <div className="innerCard-content">
-                <h3 className={styles.name}>Nome: {name}</h3>
-                <p className={styles.description}>Descrição: {description}</p>
+                <h3 className={styles.name}>{name}</h3>
+                <p className={styles.description}>{description}</p>
             </div>
         </div>
     );
