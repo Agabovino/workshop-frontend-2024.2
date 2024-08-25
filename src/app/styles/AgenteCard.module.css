@@ -1,33 +1,68 @@
 .card {
     display: flex;
-    gap: 24px;
-    border: 1px solid #ccc;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile {
+    width: 100%;
+    height: auto;
+  }
+  
+  .innerCardContent {
     padding: 16px;
-    border-radius: 8px;
-
-    max-width: 400px;
-
-    background-color: #92a0ed56;
-
-}
-
-.profile {
-    
-    width: 30%;
-
-    height: 50%;
-    border-radius: 8px;
- 
-}
-
-.name {
-    font-size: 1.2rem;
+  }
+  
+  .name {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+  }
+  
+  .classe {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 12px;
+  }
+  
+  .description {
+    font-size: 1em;
+    margin-bottom: 16px;
+  }
+  
+  .abilities {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .ability {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .abilityIcon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .abilityInfo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .abilityName {
     font-weight: bold;
-    
-    margin-top: 8px;
-}
-
-.description {
-    font-size: 1rem;
-    color: #333333;
-}
+  }
+  
+  .abilityDescription {
+    font-size: 0.9em;
+    color: #777;
+  }
+  

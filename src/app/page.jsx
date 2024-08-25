@@ -1,28 +1,24 @@
 'use client'
 
-import { useEffect, useState } from "react";
-import AgentCard from "@/app/components/AgentCard";
-import Header from "@/app/components/Header";
+// page.jsx
+import React, { useEffect, useState } from 'react';
+import Header from '@/app/components/Header';
+import AgentCard from '@/app/components/AgentCard';
 
 export default function Home() {
   const [data, setData] = useState([]);
-  const [error, setError] = useState(null); 
+  const [error, setError] = useState(null);
   const [input, setInput] = useState("");
-
-  // funcao para atualizar o estado de input
-  const getInput = (value) => {
-    setInput(value);
-  };
 
   useEffect(() => {
     fetch('https://valorant-api.com/v1/agents')
       .then(response => response.json())
       .then(result => {
-        setData(result.data);  
+        setData(result.data);
       })
       .catch(error => {
         console.error('Erro ao carregar o arquivo JSON:', error);
-        setError(error);   
+        setError(error);
       });
   }, []);
 
@@ -40,8 +36,10 @@ export default function Home() {
           <AgentCard
             key={agent.uuid}
             name={agent.displayName}
+            classe={agent.role ? agent.role.displayName : 'N/A'} // Verifica se role existe
             description={agent.description}
             profile={agent.displayIcon}
+            abilities={agent.abilities} // Passar as habilidades
           />
         ))}
       </div>
