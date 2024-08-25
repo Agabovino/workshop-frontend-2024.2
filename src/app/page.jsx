@@ -26,8 +26,20 @@ export default function Home() {
   return (
     
     <main>
-      <AgentCard key = {} nome ={} classe={} descrição ={} foto={}/>
-      
+      <div className="flex gap-2 flex-wrap">
+        {
+          data.map(agente =>(
+        
+          <AgentCard
+            key = {agente.uuid}
+            name ={agente.displayName}
+            description ={agente.description}
+            profile={agente.displayIcon}
+            />))
+        
+        }
+        
+      </div>
     </main>
   );
 }
